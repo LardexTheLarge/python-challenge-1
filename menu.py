@@ -131,7 +131,9 @@ while place_order:
                 if menuSelection in menu_items:
 
                     # Store the item name as a variable
-                    storedItem = menuSelection
+                    storedItem = menu_items[menuSelection]['Item name']
+                    print(type(storedItem))
+                    print(storedItem)
 
                     # Ask the customer for the quantity of the menu item
 
@@ -146,6 +148,8 @@ while place_order:
 
 
                 # Tell the customer they didn't select a menu option
+                else:
+                    print("Menu option not selected")
 
         else:
             # Tell the customer they didn't select a menu option
