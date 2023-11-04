@@ -166,27 +166,41 @@ while place_order:
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         # 5. Check the customer's input
+        match keep_ordering.lower():
 
+            #Customer chose yes
+            case 'y':
                 # Keep ordering
+                place_order = True
 
                 # Exit the keep ordering question loop
+                break
+            
+            #Customer chose no
+            case 'n':
 
                 # Complete the order
+                place_order = False
 
                 # Since the customer decided to stop ordering, thank them for
                 # their order
+                print("Thank you for your order.")
 
                 # Exit the keep ordering question loop
+                break
 
-
+            # Customer typed an invalid input
+            case _:
+                
                 # Tell the customer to try again
+                print("I didn't understand your response. Please try again.")
 
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-#print(order)
+print(orderList)
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
