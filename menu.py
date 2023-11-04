@@ -200,23 +200,29 @@ while place_order:
 print("This is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-print(orderList)
+# print(orderList)
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
+for item in orderList:
 
     # 7. Store the dictionary items as variables
-
+    singleItem = item
 
     # 8. Calculate the number of spaces for formatted printing
+    item_name = singleItem['Item name']
+    price = singleItem['Price']
+    quantity = singleItem['Quantity']
 
-
-    # 9. Create space strings
-
+    # 9. Create space strings for formatting
+    item_name_padding = " " * (26 - len(item_name))
+    price_padding = " " * (6 - len(str(price)))
+    quantity_padding = " " * (10 - len(str(quantity)))
 
     # 10. Print the item name, price, and quantity
+    print(f"{item_name}{item_name_padding}| ${price:.2f}{price_padding}| {quantity}{quantity_padding}")
 
 
 # 11. Calculate the cost of the order using list comprehension
