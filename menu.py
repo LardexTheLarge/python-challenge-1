@@ -228,3 +228,8 @@ for item in orderList:
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
+multiCost = [int(item['Quantity']) * item['Price'] for item in orderList]
+totalCost = sum(multiCost)
+
+print("--------------------------|--------|----------")
+print(f"Your total: ${round(totalCost, 2)}")
